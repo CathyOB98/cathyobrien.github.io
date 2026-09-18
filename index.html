@@ -280,13 +280,60 @@
     letter-spacing: 0.03em;
   }
 
-  @media (max-width: 700px) {
-    .hero { grid-template-columns: 1fr; gap: 2rem; padding: 3rem 1.5rem; }
-    .hero-text h1 { font-size: 2rem; }
-    .project-grid { grid-template-columns: 1fr; }
-    nav ul { gap: 1rem; }
-    nav ul a { font-size: 0.72rem; }
+ @media (max-width: 768px) {
+  /* Nav */
+  nav { padding: 0 1rem; }
+  nav .brand { font-size: 0.85rem; }
+  nav ul { gap: 0.6rem; }
+  nav ul a { font-size: 0.65rem; letter-spacing: 0.04em; }
+
+  /* Hero — stack vertically */
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 2.5rem 1.5rem;
+    text-align: center;
   }
+  .hero-photo-wrap { display: flex; justify-content: center; }
+  .hero-photo { width: 150px; height: 150px; }
+  .hero-text h1 { font-size: 2rem; }
+  .links-row { justify-content: center; }
+
+  /* Sections */
+  section { padding: 2.5rem 1.2rem; }
+
+  /* Project grid — single column */
+  .project-grid { grid-template-columns: 1fr; }
+
+  /* Publications — compress year column */
+  .pub-list li { grid-template-columns: 50px 1fr; gap: 0.8rem; }
+  .pub-year { font-size: 0.72rem; }
+
+  /* Talk list */
+  .talk-list li { grid-template-columns: 55px 1fr; }
+
+  /* News table — stack date above content */
+  table { display: block; }
+  table tbody { display: block; }
+  table tr {
+    display: flex;
+    flex-direction: column;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  table td:first-child {
+    padding: 0 0 0.3rem 0;
+    white-space: normal;
+    width: auto;
+  }
+  table td:last-child { padding: 0; }
+}
+
+@media (max-width: 380px) {
+  nav ul { gap: 0.4rem; }
+  nav ul a { font-size: 0.58rem; }
+  .hero-text h1 { font-size: 1.7rem; }
+}
 </style>
 </head>
 <body>
